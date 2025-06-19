@@ -3,6 +3,15 @@ spring:
   profiles:
     include: oauth
 
+  # ANSI 컬러 로그 출력 활성화
+  output:
+    ansi:
+      enabled: ALWAYS
+
+# 머스테치 인코딩 설정 추가
+  mustache:
+    charset: UTF-8
+
   # H2 데이터베이스 설정 (개발용)
   h2:
     console:
@@ -23,3 +32,11 @@ spring:
         format_sql: true
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+# 서버 인코딩 설정
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+

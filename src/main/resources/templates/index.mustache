@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>happened</title>
+</head>
+<body>
+    <h1>happened에 오신 것을 환영합니다!</h1>
+    <br/>
+
+    {{#userName}}  <!-- 모델에 userName이 있는 경우 (로그인 상태) -->
+        Logged in as: <strong>{{userName}}</strong>
+        <br/><br/>
+        <a href="/logout" role="button">로그아웃</a>
+    {{/userName}}
+
+    {{^userName}} <!-- 모델에 userName이 없는 경우 (비로그인 상태) -->
+        <p>로그인하여 서비스를 이용해보세요.</p>
+        <a href="/oauth2/authorization/google" role="button">Google로 로그인</a>
+    {{/userName}}
+
+</body>
+</html>
